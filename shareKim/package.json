@@ -1,0 +1,13 @@
+{
+  "name": "shareKim",
+  "version": "1.0.0",
+  "description": "- github io(https://pages.github.com/)에 새로운 프로젝트를 생성합니다.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
