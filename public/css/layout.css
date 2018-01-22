@@ -1,0 +1,204 @@
+@charset "utf-8";
+@import url("./normalize.css");
+@import url("./reset.css");
+
+
+/* 기본 box-sizing 재설정 */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* 숨김 콘텐츠 */
+.readable-hidden{
+  position: absolute;
+  left: -9999px;
+}
+
+
+/* 링크 스타일 */
+
+a {
+    text-decoration: none;
+  }
+  
+  a:link,
+  a:visited {
+    color: inherit;
+  }
+
+
+  a:hover img, a:focus img{
+    animation: hover-img .5s forwards;
+    /*vender frefix*/
+    -webkit-animation: hover-img .5s forwards;
+    -moz-animation: hover-img .5s forwards;
+    -o-animation: hover-img .5s forwards;
+  }
+
+  a:hover figure, a:focus figure {
+    animation: overlay-figure .5s forwards;
+    /*vender frefix*/
+    -webkit-animation: overlay-figure .5s forwards;
+    -moz-animation: overlay-figure .5s forwards;
+    -o-animation: overlay-figure .5s forwards;
+  }
+
+
+#wrapper{
+    max-width:1440px;
+    /*background:red;*/
+}
+
+#content{
+    margin:0 auto;
+    width:100%;
+}
+
+.section-inner{
+    width:100%;
+}
+
+.section-inner ul{
+  /* width: 1110px; */
+  width:80%;
+  margin:2em auto;
+  /*background:blue;*/
+  overflow:hidden;
+}
+
+.section-inner ul li{
+    float:left;
+    height:250px;
+    margin-bottom:25px;
+    overflow:hidden;
+}
+
+.row {
+    margin-left: 1px;
+    margin-right: 0px;
+}
+.row:after {
+    clear: both;
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table;
+    }
+
+.col-01{
+    width: 33.33%;
+}
+.col-02{
+    width: 66.67%;
+}
+
+.col-03{
+    width:100%;
+}
+
+.col-01, .col-02, .col-03 {
+    padding-left:10px;
+    padding-right:10px;
+    }
+    
+
+.section-inner ul li a{
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+.section-inner ul li a figure{
+    width:100%;
+    height:100%;
+    position: relative;
+    background:rgba(0,0,0,0.4);
+}
+
+.section-inner ul li a figure img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display: block;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index: -1;
+}
+
+
+.section-inner ul li a figure figcaption{
+    position:absolute;
+    color:#fff;
+    left:0;
+    right:0;
+    top:20px;
+    width:100%;
+    z-index:2;
+}
+
+.section-inner ul li a figure figcaption h2{
+    text-align:center;
+    font-weight:900;
+    font-size:13px;
+}
+
+.section-inner ul li a figure figcaption p{
+    text-align: center;
+    font-size:11px;
+}
+
+/* The animation code */
+@keyframes hover-img {
+    0% {
+      width:100%;
+      height:100%;
+    }
+    100% {
+      width:110%;
+      height:110%;
+    }
+}
+
+@keyframes overlay-figure {
+    0% {
+        background:rgba(0,0,0,0.4);
+    }
+    100% {
+        background:rgba(0,0,0,0.7);
+    }
+}
+
+/* media query */
+/* -- PC 환경에서는 3칸씩 1줄을 차지합니다.
+-- 타블렛 환경에서는 2칸씩 1줄을 차지합니다.
+-- 모바일 환경에서는 1칸씩 1줄을 차지합니다.
+*/
+
+/* PC는 공통 layout.css
+태블렛, 모바일만 미디어 쿼리 분기점 나눔*/
+
+/* table */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    /*#wrapper{background:yellow}*/
+    .col-01{
+        width: 50%;
+    }
+    .col-02{
+        width: 50%;
+    }
+}
+
+/* mobile */
+@media screen and (max-width:480px){
+    /*#wrapper{background: green;}*/
+    .col-01, .col-02, .col-03{
+        width:100%;
+    }
+}
