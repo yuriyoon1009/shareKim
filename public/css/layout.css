@@ -136,6 +136,48 @@ a {
     font-size:11px;
 }
 
+/*
+
+부트스트랩의 row col 방식을 이용하면 해결이 가능하다.
+<style>
+.row {
+margin-left: -10px;
+margin-right: -10px;
+}
+.row:after {
+clear: both;
+}
+
+.row:before, .row:after {
+content: " ";
+display: table;
+}
+
+.col-01{
+width: 33.33%;
+}
+.col-02{
+width: 66.67%;
+}
+
+.col-03{
+width:100%;
+}
+
+.col-01, .col-02, .col-03 {
+padding-left:10px;
+padding-right:10px;
+}
+
+</style>
+
+<div class="row">
+<div class="col-01">
+
+</div>
+</div>
+
+*/
 /* The animation code */
 @keyframes hover-img {
     0% {
