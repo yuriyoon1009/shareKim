@@ -11,7 +11,7 @@
       if (req.readyState === XMLHttpRequest.DONE) {
         if (req.status === 200) {
           console.log(req.responseText);
-          // Deserializing (String → Object)
+          // Deserializing (String > Object)
           responseObject = JSON.parse(req.responseText);
           // JSON object > HTML String
           let shareKimContent = '';
@@ -19,17 +19,19 @@
             `<div class="section-inner">
                  <h1 class="readable-hidden">ShareKim content section</h1>
                    <ul>
-                      ${responseObject.map((tour,i) => 
-                        `<li class= ${responseObject[i].size}>
-                          <a href=${responseObject[i].url} title="shareKim-url">
-                            <figure>
-                                <img src=${responseObject[i].img} alt="sharKimImg">
-                                <figcaption>
-                                  <h2>${responseObject[i].title}</h2>
-                                  <p>${responseObject[i].desc}</p>
-                                </figcaption>
-                            </figure>
-                          </a>
+                      ${responseObject.map((tour,i) =>
+                        `<li class="row">
+                          <p class= ${responseObject[i].size}>
+                            <a href=${responseObject[i].url} title="shareKim-url">
+                              <figure>
+                                  <img src=${responseObject[i].img} alt="sharKimImg">
+                                  <figcaption>
+                                    <h2>${responseObject[i].title}</h2>
+                                    <p>${responseObject[i].desc}</p>
+                                  </figcaption>
+                              </figure>
+                            </a>
+                          </p>
                         </li>`
                         ).join('')}
                    </ul>

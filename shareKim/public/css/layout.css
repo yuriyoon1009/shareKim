@@ -77,6 +77,19 @@ a {
     overflow:hidden;
 }
 
+.row {
+    margin-left: 1px;
+    margin-right: 0px;
+}
+.row:after {
+    clear: both;
+}
+
+.row:before, .row:after {
+    content: " ";
+    display: table;
+    }
+
 .col-01{
     width: 33.33%;
 }
@@ -87,6 +100,12 @@ a {
 .col-03{
     width:100%;
 }
+
+.col-01, .col-02, .col-03 {
+    padding-left:10px;
+    padding-right:10px;
+    }
+    
 
 .section-inner ul li a{
     width:100%;
